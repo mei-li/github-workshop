@@ -1,4 +1,4 @@
-def byr():
+def bye():
     print('Goodbye')
 
 
