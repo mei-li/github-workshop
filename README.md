@@ -116,12 +116,41 @@ git checkout -b <NEW_BRANCH>
 Use git log to look at the commit messages
 
 ```
-git log -3
+git log -5
 ```
 
-## Rewrite the last 3 commits
+Optional things
 
-Undo the last 3 commits and split them into one for the
+Tip:
+to make your git log look more compact like this:
+```
+16fed12 [4 minutes ago] (Meili Triantafyllidi) improve commit message tip
+5a964a3 [13 minutes ago] (Meili Triantafyllidi) add slides and start part II
+13ddeff [14 minutes ago] (Meili Triantafyllidi) add assets
+707334e [4 hours ago] (Meili Triantafyllidi) add github workflow part I
+```
+you can edit you ``.gitconfig` file which is in you home directory and add this in the format section. Like this:
+
+```
+[format]
+  pretty = %C(magenta reverse)%h%Creset %Cgreen[%cr]%Creset (%an) %s
+
+```
+
+## Rewrite the last 4 commits
+
+Undo the last 4 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
+
+## Before pushing
+
+Imagine that you forgot to add some comment. Add that comment in the code and amend the last commit.
+
+## Push and make a Pull request
+
+push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
+
+## Congratulations
+Check how the gitlab workshop is below
 
 
 ### [Additional material]
