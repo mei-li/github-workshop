@@ -3,3 +3,14 @@
 add your tip
 
 - Start a commit message with a verb eg. `add`, `change` etc
+
+funny branch tips 
+--------
+- **first tip**
+```
+git checkout -b <add-your-new-branch-name>
+```
+- **second tip**
+```
+git log -5
+```
