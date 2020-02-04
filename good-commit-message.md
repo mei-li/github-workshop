@@ -1,5 +1,5 @@
 ## Commit message good practices
 
-add your tip
+add lee's tip
 
 - Start a commit message with a verb eg. `add`, `change` etc
