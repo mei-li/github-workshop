@@ -3,7 +3,8 @@
 add your tip
 
 - Start a commit message with a verb eg. `add`, `change` etc
-
+- add changes for learning  purpose
+ 
 funny branch tips 
 --------
 - **first tip**
