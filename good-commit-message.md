@@ -2,4 +2,4 @@
 
 add your tip
 
-- Start with a verb eg. `add`, `change` etc
+- Start a commit message with a verb eg. `add`, `change` etc
