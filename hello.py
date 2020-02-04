@@ -1,5 +1,4 @@
-def hello_world():
+def hi():
     print('Hi')
-
 
 

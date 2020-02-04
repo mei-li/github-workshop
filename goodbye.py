@@ -1,0 +1,5 @@
+def byr():
+    print('Goodbye')
+
+
+
