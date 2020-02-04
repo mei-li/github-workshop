@@ -1,5 +1,5 @@
 # github-workshop
-Github flow workshop
+Github flow workshop. [Slides](https://docs.google.com/presentation/d/14BZu5jpCzmWOHfjViLCeycy6ugyDZV9bGC074TMu9Jo/edit?usp=sharing)
 
 ## Install git
 
@@ -46,7 +46,6 @@ git checkout -b add-george-tips
 
 Now open `commit-messages.md` file in a text editor, and add your tips for writing good commit messages. 
 
-<img align="right" width="450" src="assets/git-status.png" alt="git status" />
 
 If you go to the project directory and execute the command `git status`, you'll see there are changes.
 
@@ -76,11 +75,10 @@ replacing `<add-your-branch-name>` with the name of the branch you created earli
 If you go to your repository on GitHub, you'll see a  `Compare & pull request` button (in Gitlab it is called `Merge request`)
 Click on that button.
 
-<img style="float: right;" src="assets/compare-and-pull.png" alt="create a pull request" />
+It should be `master` at the left and your branch at the right. Sth like
+`master <- your-branch-name`
 
 Now submit the pull request.
-
-<img style="float: right;" src="assets/submit-pull-request.png" alt="submit pull request" />
 
 ### Get a review
 Now exchange reviewes with a person sitting near you. In github you can assign them as a reviewer in your Pull Request or tell them your Pull request number.
@@ -97,6 +95,33 @@ Address the comments of the review or reply to them explaining your reasoning. I
 ### Where to go from here?
 
 Congrats!  You just completed the standard clone -> edit -> PR_ workflow that helps you collaborate and share knowledge with your team!
+
+## Part II - Rewrite history
+
+Rewritting history in git is possible. One should be careful not to do that, in any branch that is already shared with somebody else. To be on the safe side do history rewrites before pushing the commits or in another branch.
+
+
+### Get the ugly-history
+
+Start a branch from the `ugly-history` branch
+
+Tip
+```
+git checkout <BRANCH_TO_BASE_YOURS>
+git checkout -b <NEW_BRANCH>
+``` 
+
+## Look at the commits
+
+Use git log to look at the commit messages
+
+```
+git log -3
+```
+
+## Rewrite the last 3 commits
+
+Undo the last 3 commits and split them into one for the
 
 
 ### [Additional material]
