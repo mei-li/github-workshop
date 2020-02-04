@@ -7,8 +7,10 @@ add your tip
 funny branch tips 
 --------
 - first tip 
-```git checkout -b <add-your-new-branch-name>
+```
+git checkout -b <add-your-new-branch-name>
 ```
 
-```git log -5
+```
+git log -5
 ```
