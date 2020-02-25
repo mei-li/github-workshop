@@ -126,9 +126,12 @@ To be on the safe side do history rewrites **before** pushing the commits or eve
 
 - If you have not added (we call it "staged") or commited a change yet `git checkout <filename>` removes all of the local changes on the file.  Be careful with this one, you might easily lose relevant work
 - If you have already added but not yet commited a change `git reset HEAD <filename>`
-- `git commit --amend -m "your new commit message"` lets you add some changes to your previous commit 
-- `git revert <commitID>` lets you undo a specific commit as an additional commit. This is a very safe option but may not always the right one.
-- `git reset <commitID>` reset your repository back to the status of a specific commit. all changes afterwards will be lost
+
+For changes that have already been commited:
+
+- `git commit --amend -m "your new commit message"` lets you add some changes to your previous commit (use on private branches only)
+- `git revert <commitID>` lets you undo a specific commit as an additional commit. This is a very safe option also if you shared a branch already
+- `git reset --soft <commitID>` there is also a `--hard` flag but don't use it unless you know exactly what you are doing
 
 
 ### Rewriting history
@@ -145,15 +148,24 @@ git checkout -b <your_new_branch>
 Use git log to look at the commit messages
 
 ```
-git log -5
+git log -10
 ```
+
+## Undo a commit
+
+Revert the commit where `commit-message.md` is added by running
+```
+git revert --no-edit <commit hash> 
+```
+and again check your commit history
 
 ## Rewrite the last 4 commits
 
-Undo the last 4 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
-
-
-## Undo a commit
+Now undo the last 4 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
+Use
+```
+git reset --soft <commit hash> 
+```
 
 
 ## Before pushing
