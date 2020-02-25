@@ -182,19 +182,21 @@ Imagine that you forgot to add some comment. Add a random comment to `hello.py`o
 Push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
 
 
-## Optional: play around with .gitignore
+### Part III (Optional): Playing around some more 
+
+## .gitignore
 
 As the name suggests `.gitignore` is a list of files to be ignored by git. That means that changes in these files will not be tracked and thus also not end up on GitHub or any other hosting service. (example: sensitive data)
 
-Create a new empty file of any type to your repository.
+Add a new empty file of any type to your repository.
 Open the hidden file `.gitignore` via your Terminal in a text editor.
 Add the new file you just created **and** another previously existing file in your repository to the file list.
 Add and commit your changes and watch what happens to understand `.gitignore` better.
 
+## Merge Conflicts
 
-## Optional: trigger and solve some merge conflicts
+Team up with your collaborators. Merge one of your reviewed pull requests and then see what happens with your open pull requests!
 
-Team up with one of your collaborators and 
 
 ### Some Tips
 
