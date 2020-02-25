@@ -1,5 +1,9 @@
 # github-workshop
-Github flow workshop. [Slides](https://docs.google.com/presentation/d/14BZu5jpCzmWOHfjViLCeycy6ugyDZV9bGC074TMu9Jo/edit?usp=sharing)
+
+Github flow workshops 
+
+[Slides from Meili](https://docs.google.com/presentation/d/14BZu5jpCzmWOHfjViLCeycy6ugyDZV9bGC074TMu9Jo/edit?usp=sharing)
+[Slides from Denise](https://docs.google.com/presentation/d/18bI6VhPjsbpbTy51Ba7jh3lmS09zsnfMF778IiKDwYM/edit?usp=sharing)
 
 ## Install git
 
@@ -18,9 +22,9 @@ Now clone the repository to your machine. Go to your GitHub account, open the re
 Open a terminal and run the following git command:
 
 ```
-git clone "url you just copied"
+git clone <url you just copied>
 ```
-where "url you just copied" (without the quote marks) is the url to this repository (your fork of this project). See the previous steps to obtain the url.
+where "url you just copied" (without the < > signs) is the url to this repository. See the previous steps to obtain the url.
 
 <img align="right" width="300" src="assets/copy-to-clipboard.png" alt="copy URL to clipboard" />
 
@@ -35,7 +39,7 @@ Now create a branch using the `git checkout` command:
 ```
 git checkout -b <add-your-new-branch-name>
 ```
-The branch will be to edit the file `commit-messages.md` in this repository and add your tips. So name it something relevant, including your name so that it is not the same with the rest of the people.
+On your branch (local copy of the repository) you will edit the file `commit-messages.md` in this repository and add some tips on how to write good commit messages. Give your branch a meaningful name, including your name so that it is not the same as the branch of everyone else in the workshop.
 
 For example:
 ```
@@ -45,6 +49,7 @@ git checkout -b add-george-tips
 ### Make necessary changes and commit those changes
 
 Now open `commit-messages.md` file in a text editor, and add your tips for writing good commit messages. 
+Save the changed markdown file.
 
 
 If you go to the project directory and execute the command `git status`, you'll see there are changes.
@@ -56,11 +61,16 @@ Add those changes to the branch you just created using the `git add` command:
 git add commit-messages.md
 ```
 
+Hit `git status` again to see how the changes are still there but now they are staged for commit (it's a necessary preparation)
+
 Now commit those changes with a nice commit message using the `git commit` command:
 ```
 git commit -m "Add HERE your commit message"
 ```
 replacing the text in `""` with your commit message.
+
+Up until now, you have not submitted anything to GitHub!
+
 
 ### Push changes to GitHub
 
@@ -70,10 +80,10 @@ git push origin <add-your-branch-name>
 ```
 replacing `<add-your-branch-name>` with the name of the branch you created earlier.
 
+
 ### Submit your changes for review
 
-If you go to your repository on GitHub, you'll see a  `Compare & pull request` button (in Gitlab it is called `Merge request`)
-Click on that button.
+Now go to your repository on GitHub, you'll see a  `Compare & pull request` button. Click on that button.
 
 It should be `master` at the left and your branch at the right. Sth like
 `master <- your-branch-name`
