@@ -80,14 +80,14 @@ git push origin <add-your-branch-name>
 ```
 replacing `<add-your-branch-name>` with the name of the branch you created earlier.
 
+<img align="right" width="300" src="assets/change_base_repo.png" alt="change base repo" />
 
 ### Submit your changes for review
 
 Now go to your repository on GitHub, you'll see a  `Compare & pull request` button. Click on that button.
 
-It should be `master` at the left and your branch at the right. Sth like
-`master <- your-branch-name`
-<img align="right" width="300" src="assets/change_base_repo.png" alt="change base repo" />
+Before sumitting the Pull Request, make sure to change the base repository from Meili's repository to the current fork on profile denisesenguel.
+Afterwards it should be `master` at the left and your branch at the right. Sth like
 
 <img align="center" width="900" src="assets/merge_settings_pr.png" alt="merge settings pr" />
 
@@ -95,6 +95,7 @@ You may change the title of the Pull request if you want to. It should be short 
 Now submit the pull request.
 
 ### Get a review
+
 Now exchange reviewes with a person sitting near you. In GitHub you can assign them as a reviewer in your Pull Request or tell/send them your Pull request number.
 
 ### Submit a review
@@ -113,7 +114,7 @@ Use a meaningful commit message when addressing the comments eg. `Improve wordin
 Congrats!  You just completed the standard clone -> edit -> PR_ workflow that helps you collaborate and share knowledge with your team!
 
 
-## Part II - Undo changes
+## Part II - Undoing changes
 
 If you realize that you want to undo some changes you've made, you have several options and it depends on what you have done before.
 Rewritting history in git is possible. One should be careful not to do that, in general because changes might get lost and in particular on any branch that is already shared with somebody else. 
@@ -121,9 +122,10 @@ To be on the safe side do history rewrites **before** pushing the commits or eve
 
 ### Your options
 
-- `git checkout .` removes all of the local changes you have not commited yet and resets to the last commit. Be careful with this one, you might easily lose relevant work
-- `git commit --amend -m "your new commit message"` lets you add some changes to your previous commit. This is very unproblematic if you have not pushed your changes to GitHub yet
-- `git revert <commitID>` lets you undo a specific commit and the undoing will be an additional commit itself. This is a very safe option but may not always the right one.
+- If you have not added (we call it "staged") or commited a change yet `git checkout <filename>` removes all of the local changes on the file.  Be careful with this one, you might easily lose relevant work
+- If you have already added but not yet commited a change `git reset HEAD <filename>`
+- `git commit --amend -m "your new commit message"` lets you add some changes to your previous commit 
+- `git revert <commitID>` lets you undo a specific commit as an additional commit. This is a very safe option but may not always the right one.
 - `git reset <commitID>` reset your repository back to the status of a specific commit. all changes afterwards will be lost
 
 
@@ -158,24 +160,25 @@ Imagine that you forgot to add some comment. Add a random comment in the code an
 
 ## Push and make a Pull request
 
-push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
+Push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
 
 ## Optional: play around with .gitignore
 
+As the name suggests `.gitignore` is a list of files to be ignored by git. That means that changes in these files will not be tracked and thus also not end up on GitHub or any other hosting service. (example: sensitive data)
+
+Create a new empty file of any type to your repository.
+Open the hidden file `.gitignore` via your Terminal in a text editor.
+Add the new file you just created **and** another previously existing file in your repository to the file list.
+Add and commit your changes and watch what happens to understand `.gitignore` better.
 
 
+### Some Tips
 
+If a command like add, commit or reset applies to all of your changed files (not just one) use for example `git add .` or `git add *` to not run the command on every single file separately.
 
-### Additional Tips and material
+## Prettify
 
-Ways to undo changes in your commit history
-[Git Reset, Revert and Checkout](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
-
-Gitlab workshop:
-[Gitlab workflow](https://about.gitlab.com/blog/2017/03/17/demo-mastering-code-review-with-gitlab/)
-
-
-Tip: to make your git log look more compact like this:
+To make your git log look more compact like this:
 ```
 16fed12 [4 minutes ago] (Meili Triantafyllidi) improve commit message tip
 5a964a3 [13 minutes ago] (Meili Triantafyllidi) add slides and start part II
@@ -190,5 +193,15 @@ you can edit your `.gitconfig` file which is in you home directory and add this 
   pretty = %C(magenta reverse)%h%Creset %Cgreen[%cr]%Creset (%an) %s
 
 ```
+
+
+### Additional material
+
+Ways to undo changes in your commit history
+[Git Reset, Revert and Checkout](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+
+Gitlab workshop:
+[Gitlab workflow](https://about.gitlab.com/blog/2017/03/17/demo-mastering-code-review-with-gitlab/)
+
 
 
