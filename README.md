@@ -3,11 +3,13 @@
 Github flow workshops 
 
 [Slides from Meili](https://docs.google.com/presentation/d/14BZu5jpCzmWOHfjViLCeycy6ugyDZV9bGC074TMu9Jo/edit?usp=sharing)
+
 [Slides from Denise](https://docs.google.com/presentation/d/18bI6VhPjsbpbTy51Ba7jh3lmS09zsnfMF778IiKDwYM/edit?usp=sharing)
 
 ## Install git
 
 If you don't have a GitHub account yet, [sign up](https://github.com/join)
+
 If you don't have git on your machine, [install and configure it]( https://help.github.com/articles/set-up-git/)
 
 
@@ -131,7 +133,7 @@ For changes that have already been commited:
 
 - `git commit --amend -m "your new commit message"` lets you add some changes to your previous commit (use on private branches only)
 - `git revert <commitID>` lets you undo a specific commit as an additional commit. This is a very safe option also if you shared a branch already
-- `git reset --soft <commitID>` there is also a `--hard` flag but don't use it unless you know exactly what you are doing
+- `git reset --soft <commitID>` there is also a `--hard` flag but don't use it unless you know exactly what you are doing!
 
 
 ### Rewriting history
@@ -145,7 +147,7 @@ git checkout -b <your_new_branch>
 
 ## Look at the commits
 
-Use git log to look at the commit messages
+Use git log to look at the commit history (last 10 commits)
 
 ```
 git log -10
@@ -157,24 +159,28 @@ Revert the commit where `commit-message.md` is added by running
 ```
 git revert --no-edit <commit hash> 
 ```
-and again check your commit history
+and again check your commit history. The commit ID can be obtained from the commit history.
+
 
 ## Rewrite the last 4 commits
 
-Now undo the last 4 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
+Now undo the last 5 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
 Use
 ```
-git reset --soft <commit hash> 
+git reset --soft HEAD~5
 ```
+Then add and commit as described.
 
 
 ## Before pushing
 
-Imagine that you forgot to add some comment. Add a random comment in the code and amend the last commit.
+Imagine that you forgot to add some comment. Add a random comment to `hello.py`or `goodbye.py` and amend the last commit.
+
 
 ## Push and make a Pull request
 
 Push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
+
 
 ## Optional: play around with .gitignore
 
@@ -185,6 +191,10 @@ Open the hidden file `.gitignore` via your Terminal in a text editor.
 Add the new file you just created **and** another previously existing file in your repository to the file list.
 Add and commit your changes and watch what happens to understand `.gitignore` better.
 
+
+## Optional: trigger and solve some merge conflicts
+
+Team up with one of your collaborators and 
 
 ### Some Tips
 
@@ -208,11 +218,9 @@ you can edit your `.gitconfig` file which is in you home directory and add this 
 
 ```
 
+### Additional material 
 
-### Additional material
-
-Ways to undo changes in your commit history
-[Git Reset, Revert and Checkout](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+More to be added.
 
 Gitlab workshop:
 [Gitlab workflow](https://about.gitlab.com/blog/2017/03/17/demo-mastering-code-review-with-gitlab/)
