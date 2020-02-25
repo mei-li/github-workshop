@@ -87,38 +87,53 @@ Now go to your repository on GitHub, you'll see a  `Compare & pull request` butt
 
 It should be `master` at the left and your branch at the right. Sth like
 `master <- your-branch-name`
+<img align="right" width="300" src="assets/change_base_repo.png" alt="change base repo" />
 
+<img align="center" width="900" src="assets/merge_settings_pr.png" alt="merge settings pr" />
+
+You may change the title of the Pull request if you want to. It should be short but informative about all the changes you did.
 Now submit the pull request.
 
 ### Get a review
-Now exchange reviewes with a person sitting near you. In github you can assign them as a reviewer in your Pull Request or tell them your Pull request number.
+Now exchange reviewes with a person sitting near you. In GitHub you can assign them as a reviewer in your Pull Request or tell/send them your Pull request number.
 
 ### Submit a review
-Github offers 2 ways of reviewing, either with `single comments` or with `start review` that let you add multiple comments that will be visible when selecting the `submit review`. This way they will show all together. Use the `signle comments`
+Github offers 2 ways of reviewing, either with `single comments` or with `start review` that let you add multiple comments that will be visible when selecting the `submit review`. This way they will show all together. Use the `single comments`
 
 Add a review and ask the author to make some change. A review should be respectful and explain the reason that the change is needed, giving context. 
 
 ### Address comments
 
-Address the comments of the review or reply to them explaining your reasoning. If see that the suggested changes make sense, make the changes locally and push the updates. Use a meaningful commit message when addressing the comments eg. `Improve wording` instead of `addressing comments`
+Address the comments of the review or reply to them explaining your reasoning. If see that the suggested changes make sense, make the changes locally and save. Then add, commit and push the updates to GitHub as you did with the initial changes.
+
+Use a meaningful commit message when addressing the comments eg. `Improve wording` instead of `addressing comments`
 
 ### Where to go from here?
 
 Congrats!  You just completed the standard clone -> edit -> PR_ workflow that helps you collaborate and share knowledge with your team!
 
-## Part II - Rewrite history
 
-Rewritting history in git is possible. One should be careful not to do that, in any branch that is already shared with somebody else. To be on the safe side do history rewrites before pushing the commits or in another branch.
+## Part II - Undo changes
+
+If you realize that you want to undo some changes you've made, you have several options and it depends on what you have done before.
+Rewritting history in git is possible. One should be careful not to do that, in general because changes might get lost and in particular on any branch that is already shared with somebody else. 
+To be on the safe side do history rewrites **before** pushing the commits or even better in an additional branch!
+
+### Your options
+
+- `git checkout .` removes all of the local changes you have not commited yet and resets to the last commit. Be careful with this one, you might easily lose relevant work
+- `git commit --amend -m "your new commit message"` lets you add some changes to your previous commit. This is very unproblematic if you have not pushed your changes to GitHub yet
+- `git revert <commitID>` lets you undo a specific commit and the undoing will be an additional commit itself. This is a very safe option but may not always the right one.
+- `git reset <commitID>` reset your repository back to the status of a specific commit. all changes afterwards will be lost
 
 
-### Get the ugly-history
+### Rewriting history
 
-Start a branch from the `ugly-history` branch
+Get the ugly-history branch and start a new branch from it
 
-Tip
 ```
-git checkout <BRANCH_TO_BASE_YOURS>
-git checkout -b <NEW_BRANCH>
+git checkout <ugly-history>
+git checkout -b <your_new_branch>
 ``` 
 
 ## Look at the commits
@@ -129,17 +144,46 @@ Use git log to look at the commit messages
 git log -5
 ```
 
-Optional things
+## Rewrite the last 4 commits
 
-Tip:
-to make your git log look more compact like this:
+Undo the last 4 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
+
+
+## Undo a commit
+
+
+## Before pushing
+
+Imagine that you forgot to add some comment. Add a random comment in the code and amend the last commit.
+
+## Push and make a Pull request
+
+push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
+
+## Optional: play around with .gitignore
+
+
+
+
+
+### Additional Tips and material
+
+Ways to undo changes in your commit history
+[Git Reset, Revert and Checkout](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+
+Gitlab workshop:
+[Gitlab workflow](https://about.gitlab.com/blog/2017/03/17/demo-mastering-code-review-with-gitlab/)
+
+
+Tip: to make your git log look more compact like this:
 ```
 16fed12 [4 minutes ago] (Meili Triantafyllidi) improve commit message tip
 5a964a3 [13 minutes ago] (Meili Triantafyllidi) add slides and start part II
 13ddeff [14 minutes ago] (Meili Triantafyllidi) add assets
 707334e [4 hours ago] (Meili Triantafyllidi) add github workflow part I
 ```
-you can edit you ``.gitconfig` file which is in you home directory and add this in the format section. Like this:
+
+you can edit your `.gitconfig` file which is in you home directory and add this in the format section. Like this:
 
 ```
 [format]
@@ -147,22 +191,4 @@ you can edit you ``.gitconfig` file which is in you home directory and add this 
 
 ```
 
-## Rewrite the last 4 commits
-
-Undo the last 4 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
-
-## Before pushing
-
-Imagine that you forgot to add some comment. Add that comment in the code and amend the last commit.
-
-## Push and make a Pull request
-
-push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
-
-## Congratulations
-Check how the gitlab workshop is below
-
-
-### [Additional material]
-[Gitlab workflow](https://about.gitlab.com/blog/2017/03/17/demo-mastering-code-review-with-gitlab/)
 
