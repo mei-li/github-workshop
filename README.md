@@ -7,7 +7,9 @@ Github flow workshops
 
 ## Install git
 
-If you don't have git on your machine, [install it]( https://help.github.com/articles/set-up-git/).
+If you don't have a GitHub account yet, [sign up](https://github.com/join)
+If you don't have git on your machine, [install and configure it]( https://help.github.com/articles/set-up-git/)
+
 
 ## Become a collaborator in this repository
 Come over to me to add you as a collaborator of this repository.
