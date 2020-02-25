@@ -162,7 +162,7 @@ git revert --no-edit <commit hash>
 and again check your commit history. The commit ID can be obtained from the commit history.
 
 
-### Rewrite the last 4 commits
+### Rewrite the last 5 commits
 
 Now undo the last 5 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
 Use
