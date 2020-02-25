@@ -86,8 +86,8 @@ replacing `<add-your-branch-name>` with the name of the branch you created earli
 
 Now go to your repository on GitHub, you'll see a  `Compare & pull request` button. Click on that button.
 
-Before sumitting the Pull Request, make sure to change the base repository from Meili's repository to the current fork on profile denisesenguel.
-Afterwards it should be `master` at the left and your branch at the right. Sth like
+Before sumitting the Pull Request, make sure to change the base repository from mei-li/github-workshop to the current fork of the repo denisesenguel/github-workshop.
+Afterwards it should be `master` at the left and your branch at the right. It should look something like this
 
 <img align="center" width="900" src="assets/merge_settings_pr.png" alt="merge settings pr" />
 
