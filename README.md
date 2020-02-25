@@ -145,7 +145,7 @@ git checkout <ugly-history>
 git checkout -b <your_new_branch>
 ``` 
 
-## Look at the commits
+### Look at the commits
 
 Use git log to look at the commit history (last 10 commits)
 
@@ -153,7 +153,7 @@ Use git log to look at the commit history (last 10 commits)
 git log -10
 ```
 
-## Undo a commit
+### Undo a commit
 
 Revert the commit where `commit-message.md` is added by running
 ```
@@ -162,7 +162,7 @@ git revert --no-edit <commit hash>
 and again check your commit history. The commit ID can be obtained from the commit history.
 
 
-## Rewrite the last 4 commits
+### Rewrite the last 4 commits
 
 Now undo the last 5 commits and split them into two, one adding the `hello.py` file and one the `goodbye.py`
 Use
@@ -172,19 +172,19 @@ git reset --soft HEAD~5
 Then add and commit as described.
 
 
-## Before pushing
+### Before pushing
 
 Imagine that you forgot to add some comment. Add a random comment to `hello.py`or `goodbye.py` and amend the last commit.
 
 
-## Push and make a Pull request
+### Push and make a Pull request
 
 Push your new branch and make a Pull request. Ask for your reviewer to check the commits. 
 
 
-### Part III (Optional): Playing around some more 
+## Part III (Optional): Playing around some more 
 
-## .gitignore
+### .gitignore
 
 As the name suggests `.gitignore` is a list of files to be ignored by git. That means that changes in these files will not be tracked and thus also not end up on GitHub or any other hosting service. (example: sensitive data)
 
@@ -193,16 +193,16 @@ Open the hidden file `.gitignore` via your Terminal in a text editor.
 Add the new file you just created **and** another previously existing file in your repository to the file list.
 Add and commit your changes and watch what happens to understand `.gitignore` better.
 
-## Merge Conflicts
+### Merge Conflicts
 
 Team up with your collaborators. Merge one of your reviewed pull requests and then see what happens with your open pull requests!
 
 
-### Some Tips
+## Some more Tips
 
 If a command like add, commit or reset applies to all of your changed files (not just one) use for example `git add .` or `git add *` to not run the command on every single file separately.
 
-## Prettify
+### Prettify
 
 To make your git log look more compact like this:
 ```
@@ -220,7 +220,7 @@ you can edit your `.gitconfig` file which is in you home directory and add this 
 
 ```
 
-### Additional material 
+## Additional material 
 
 More to be added.
 
